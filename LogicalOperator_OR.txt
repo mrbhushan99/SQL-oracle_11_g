@@ -1,0 +1,77 @@
+SQL> --7. waqtd the department number and department name of employees whose department location is either 'dallas' or 'chicago'.
+SQL> SELECT DEPTNO,DNAME
+  2  FRPM DEPT
+  3  WHERE DNAME = 'DALLAS' OR DNAME = 'CHICAGO' ;
+FRPM DEPT
+     *
+ERROR at line 2:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> SELECT DEPTNO,DNAME
+  2  FROM DEPT
+  3  WHERE DNAME = 'DALLAS' OR DNAME = 'CHICAGO' ;
+
+no rows selected
+
+SQL> SELECT *
+  2  FROM DEPT;
+
+    DEPTNO DNAME          LOC                                                   
+---------- -------------- -------------                                         
+        10 ACCOUNTING     NEW YORK                                              
+        20 RESEARCH       DALLAS                                                
+        30 SALES          CHICAGO                                               
+        40 OPERATIONS     BOSTON                                                
+
+SQL> SELECT DEPTNO,DNAME
+  2  FROM DEPT
+  3  WHERE LOC = 'DALLAS' OR LOC = 'CHICAGO' ;
+
+    DEPTNO DNAME                                                                
+---------- --------------                                                       
+        20 RESEARCH                                                             
+        30 SALES                                                                
+
+SQL> --8. waqtd the name and job of employees whose job title is either 'president' or 'manager'.
+SQL> SELECT ENAME,JOB
+  2  FROM EMP
+  3  WHERE JOB = 'PRESIDENT' OR JOB = 'MANAGER' ;
+
+ENAME      JOB                                                                  
+---------- ---------                                                            
+JONES      MANAGER                                                              
+BLAKE      MANAGER                                                              
+CLARK      MANAGER                                                              
+KING       PRESIDENT                                                            
+
+SQL> --9. waqtd the department number and location employees whose department name is either 'accounting' or 'research'.
+SQL> SELECT DEPTNO,LOC
+  2  FROM DEPT
+  3  WHERE DNAME = 'ACCOUNTING' OR DNAME = 'RESEARCH' ;
+
+    DEPTNO LOC                                                                  
+---------- -------------                                                        
+        10 NEW YORK                                                             
+        20 DALLAS                                                               
+
+SQL> 10. waqtd the name, salary, mgr of employees whose manager number is either 7839 or 7902.
+SP2-0734: unknown command beginning "10. waqtd ..." - rest of line ignored.
+SQL> --10. waqtd the name, salary, mgr of employees whose manager number is either 7839 or 7902.
+SQL> SELECT ENAME,SAL,MGR
+  2  FROM
+  3  ed
+  4  
+SQL> 
+SQL> select ename,sal,mgr
+  2  from emp
+  3  where mgr = 7839 or mgr = 7902 ;
+
+ENAME             SAL        MGR                                                
+---------- ---------- ----------                                                
+SMITH             800       7902                                                
+JONES            2975       7839                                                
+BLAKE            2850       7839                                                
+CLARK            2450       7839                                                
+
+SQL> spool off ;
